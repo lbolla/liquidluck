@@ -154,7 +154,7 @@ class YearWriter(ArchiveWriter):
     def _write_posts(self, year):
         posts = self._posts[year]
         pagination = Pagination(posts, 1, self.perpage)
-        pagination.title = year
+        pagination.title = str(year)
         pagination.root = self.prefix_dest(year)
 
         dest = os.path.join(g.output_directory, pagination.root, 'index.html')
